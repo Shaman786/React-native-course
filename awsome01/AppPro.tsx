@@ -13,7 +13,7 @@ function AppPro(): JSX.Element {
   );
 }
 const styles = StyleSheet.create({
-  container: {flex: 1, alignItems: 'flex-start', justifyContent: 'center'}, //AlignItems : works from left to right and Justifycontent works from top to bottomn on the screen.
+  container: {flex: 1, alignItems: 'flex-start', justifyContent: 'center'}, //AlignItems : works from left to right and Justifycontent works from top to bottom on the screen.
   WhiteText: {
     color: '#FFFFFF',
   },
