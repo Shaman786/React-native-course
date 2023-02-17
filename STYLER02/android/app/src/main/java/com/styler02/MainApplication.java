@@ -49,16 +49,16 @@ public class MainApplication extends Application implements ReactApplication {
     return mReactNativeHost;
   }
 
-@Override
-public void onCreate() {
-super.onCreate();
-SoLoader.init(this, /* native exopackage */ false);
-if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
-// If you opted-in for the New Architecture, we load the native entry point
-for this app.
-DefaultNewArchitectureEntryPoint.load();
-}
-ReactNativeFlipper.initializeFlipper(this,
-getReactNativeHost().getReactInstanceManager());
-}
+  @Override
+  public void onCreate() {
+    super.onCreate();
+    SoLoader.init(this, /* native exopackage */ false);
+    if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
+      // If you opted-in for the New Architecture, we load the native entry point
+      // for this app.
+      DefaultNewArchitectureEntryPoint.load();
+    }
+    ReactNativeFlipper.initializeFlipper(this,
+        getReactNativeHost().getReactInstanceManager());
+  }
 }
