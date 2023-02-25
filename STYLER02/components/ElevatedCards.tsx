@@ -1,4 +1,4 @@
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import{ScrollView, StyleSheet, Text, View}from 'react-native';
 import React from 'react';
 
 export default function ElevatedCards() {
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     padding: 8,
   },
   card: {
-    flex: 1,
+    flex: 2,
     alignItems: 'center',
     justifyContent: 'center',
     width: 100,
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
       height: 1,
     },
     shadowColor: '#333',
-    shadowOpacity: 0.4,
+    shadowOpacity: 1000,
     shadowRadius: 2,
   },
 });
