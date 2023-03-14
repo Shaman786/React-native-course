@@ -128,7 +128,7 @@ export default function App() {
                   <BouncyCheckbox
                     disableBuiltInState
                     isChecked={lowerCase}
-                    onPress={() => setUpperCase(!lowerCAse)}
+                    onPress={() => setUpperCase(!lowerCase)}
                     fillColor="#FED85D"
                   />
                 </View>
