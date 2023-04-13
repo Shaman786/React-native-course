@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import type { PropsWithChildren } from "react";
 import {StyleSheet,
 Text,
 View,
 Image,
-ImageSourcePropType
+ImageSourcePropType,
+Pressable
 } from "react-native";
 
 import ReactNativeHapticFeedback from "react-native-haptic-feedback";
@@ -20,6 +21,11 @@ type DiceProps = PropsWithChildren<{
   imageUrl: ImageSourcePropType
 }>
 
+const options = {
+  enableVibrateFallback: true,
+  ignoreAndroidSystemSettings: false,
+};
+
 const Dice = ({imageUrl}: DiceProps): JSX.Element => {
   return(
     <View>
@@ -29,9 +35,44 @@ const Dice = ({imageUrl}: DiceProps): JSX.Element => {
   }
 
 function App(): JSX.Element{
+  const [diceImage, setDiceImage] = useState<ImageSourcePropType>(DiceOne) //TODO:
+
+  const rollDiceOnTap = () =>{
+    let randomNumber = Math.floor(Math.random() * 6) +1;
+
+    switch (randomNumber) {
+      case 1:
+        setDiceImage(DiceOne)
+        break;
+      case 2:
+        setDiceImage(DiceTwo)
+        break;
+      case 3:
+        setDiceImage(DiceThree)
+        break;
+      case 4:
+        setDiceImage(DiceFour)
+        break;
+      case 5:
+        setDiceImage(DiceFive)
+        break;
+      case 6:
+        setDiceImage(DiceSix)
+        break;
+    
+      default:
+        setDiceImage(DiceOne)
+        break;
+    }
+    ReactNativeHapticFeedback.trigger("impactLight", options);
+
+  }
   return (
-    <View>
-      <Text>Text is here</Text>
+    <View style={styles.container}>
+      <Dice imageUrl={diceImage}/>
+      <Pressable onPress={rollDiceOnTap}>
+        <Text style={styles.rollDiceBtnText}>Roll The Dice</Text>
+      </Pressable>
     </View>
   );
 }
