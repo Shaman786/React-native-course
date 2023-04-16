@@ -15,7 +15,7 @@ const CurrencyButton = (props: CurrencyButtonProps): JSX.Element => {
     <View style={styles.buttonContainer}>
       <Text style={styles.flag}>{props.flag}</Text>
       <Text style={styles.country}>{props.name}</Text>
-      <Text style={styles.value}>{props.value}</Text>
+      
     </View>
   );
 };
